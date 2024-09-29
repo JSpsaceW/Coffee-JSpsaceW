@@ -1,0 +1,46 @@
+<%- include('../partials/header') %>
+<main class="main">
+    <div class="main__img-product">
+      
+    </div>
+    <h1 class="main__title">Article</h1>
+    <div class="div__product">
+        
+      <article class="article__product">
+
+        
+        <ul class="article__product-liste">
+          <h2 class="article__product-title"><%= product.name %></h2>
+          <li class="article__product-detail"> ☕ Description : 
+            <%= product.description %>
+          </li>
+          <li class="article__product-detail"> ☕ Origin: <%= product.origin %></li>
+          <li class="article__product-detail"> ☕ Prix au kilo : <%= product.price_per_kg %>€</li>
+          <li class="article__product-detail"> ☕ Caractéristique principale :  <%= product.characteristic %></li>
+          <li class="article__product-detail">
+            <% product.available %>
+          </li>
+          <li class="article__product-detail"> ☕ Référence : <%= product.id %></li>
+          <div class="article__product-divLink">
+            <a class="article__product-link" href="/catalog">Catalogue</a>
+          </div>
+          
+        </ul>
+        <img
+          class="article__product-img"
+          src="<%= product.image_url %>"
+          alt="<%= product.name %>"
+        />
+           
+          
+          
+      </article>
+    </div>
+  </main>
+
+
+<%- include('../partials/footer') %>
+<script src="/js/front.js"></script>
+</div>
+</body>
+</html>

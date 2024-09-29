@@ -1,0 +1,65 @@
+<%- include('../partials/header') %>
+
+
+<main class="main">
+    <div class="main__title-catalog">
+      <span class="main__catalogue-text">Notre catalogue</span>
+    </div>
+
+    <div class="main__discovery">
+      <ul class="main__discovery-list">
+
+        <% products.forEach((product, index) => {  %>
+          <% if (index < 3) { %>
+            <li class="main__discovery-item">
+              <span class="main__discovery-title"><%= product.name %></span>
+              <p class="main__discovery-text">
+                <%= product.description %>
+              </p>
+              <img
+                class="main__discovery-img"
+                src="<%= product.image_url %>"
+                alt="<%= product.name %>"
+              />
+              <div class="div__discovery-link">
+                <a class="main__discovery-link" href="/product/ <%= product.id %>"
+                >Découvrir</a
+              >
+              </div>
+              
+            </li>
+           
+          <% } else { %>
+        
+         <li class="main__discovery-item hidden">
+          <span class="main__discovery-title"><%= product.name %></span>
+          <p class="main__discovery-text">
+            <%= product.description %>
+          </p>
+          <img
+            class="main__discovery-img"
+            src="<%= product.image_url %>"
+            alt="<%= product.name %>"
+          />
+          <div class="div__discovery-link">
+            <a class="main__discovery-link" href="/product/ <%= product.id %>"
+            >Découvrir</a
+          >
+          </div>
+          
+        </li> 
+        <% } %>
+        <% }); %> 
+    </ul>
+</div>
+<div class="div__btn">
+<button id="view-more-btn" class="view-more-btn">Voir tout</button>
+</div>
+</div>
+</main>
+
+<%- include('../partials/footer') %>
+</div>
+<script src="/js/front.js"></script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+:root {
+    --theme-dark-grey: black;
+    --theme-beige: #f7dbb9;
+    --theme-white: #ffffff;
+    --theme-brown: #3e1e04;
+}
+
+body {
+    background-color: var(--theme-dark-grey);
+    color: var(--theme-white);
+    font-family: 'Noto Sans', sans-serif;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--theme-dark-grey);
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--theme-dark-grey);
+    color: var(--theme-white);
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header__part-logo {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: .5rem;
+}
+
+.header__part-logo-img {
+    width: 15rem;
+    height: 15rem;
+}
+
+.header__part-logo-title {
+    font-size: 2rem;
+}
+
+.header__part-link-item {
+    text-decoration: none;
+    margin-left: 1rem;
+    color: var(--theme-white);
+    font-size: 1.5rem;
+}
+
+/* Main Content */
+.main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1;
+}
+
+.main__img {
+    background-image: url(/images/about.jpg);
+    background-color: var(--theme-white);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .5rem;
+}
+
+.main__discovery {
+    margin: 2rem 0;
+}
+
+.main__catalogue-text {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--theme-beige);
+    text-align: center;
+    margin: 0;
+}
+
+.main__discovery-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 100%;
+}
+
+.main__discovery-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+    background-color: var(--theme-beige);
+    color: #3e1e04;
+    padding: 1rem;
+    border-radius: .5rem;
+    min-height: 10rem;
+    box-sizing: border-box;
+    gap: 1rem;
+}
+
+.main__discovery-title {
+    font-size: x-large;
+    font-weight: 800;
+    margin-bottom: .5rem;
+}
+
+.main__discovery-text {
+    margin-bottom: 1rem;
+}
+
+.div__discovery-link {
+    display: flex;
+    width: 100%;
+}
+
+.main__discovery-link {
+    text-decoration: none;
+    background-color: var(--theme-brown);
+    color: var(--theme-beige);
+    padding: .5rem;
+    border-radius: .5rem;
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+.view-more-btn {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--theme-brown);
+    color: var(--theme-beige);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--theme-dark-grey);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: .1rem;
+}
+
+.footer__presentation {
+    text-decoration: none;
+    color: var(--theme-brown);
+}
+
+.footer__text {
+    color: var(--theme-white);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header__nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header__part-link-item {
+        margin: .5rem 0;
+    }
+
+    .main__img {
+        height: 50vh;
+    }
+
+    .main__catalogue-text {
+        font-size: 1.5rem;
+    }
+
+    .main__discovery-list {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .main__discovery-item {
+        min-height: auto;
+    }
+
+    .div__btn {
+        display: flex;
+        justify-content: center;
+    }
+
+    .view-more-btn {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .header__part-logo-img {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .main__catalogue-text {
+        font-size: 1.2rem;
+    }
+
+    .main__discovery-title {
+        font-size: large;
+    }
+
+    .main__discovery-text {
+        font-size: 0.9rem;
+    }
+
+    .main__discovery-link {
+        padding: .3rem;
+        font-size: 0.8rem;
+    }
+}

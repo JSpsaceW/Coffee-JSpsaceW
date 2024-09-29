@@ -1,0 +1,84 @@
+
+<%- include('../partials/header') %>
+<main class="main">
+    <div class="main__head">
+      <article class="main__head-card">
+        <div class="main__head-text-container">
+          
+          <a class="main__head-link" href="catalog">
+            <img class="coffee-cup" src="/images/cup-no-backc-removebg-preview.png" alt="image-d-une-tasse-à-café-fumante">
+            
+            <p class="main__head-text">
+              Bienvenue dans notre boutique, où règne une ambiance chaleureuse
+              et accueillante qui éveille tous vos sens. Dès que vous
+              franchissez la porte, vous êtes enveloppé d'une douce symphonie
+              d'arômes envoûtants de café fraîchement moulu.
+              
+            </p>
+          </a>
+
+          
+        </div>
+      </article>
+
+      <figure class="main__head-figure">
+        <div class="carousel">
+          <% randomProducts.forEach(product => { %>  
+            <a class="carousel__item " href="/product/<%= product.id %>">
+              <article class="article__product">
+                <ul class="article__product-liste">
+                  <h2 class="article__product-title"><%= product.name %></h2>
+                  <li class="article__product-detail">☕ Description : <%= product.description %></li>
+                  <li class="article__product-detail">☕ Origin : <%= product.origin %></li>
+                  <li class="article__product-detail">☕ Prix au kilo : <%= product.price_per_kg %>€</li>
+                  <li class="article__product-detail">☕ Caractéristique principale : <%= product.characteristic %></li>
+                  <li class="article__product-detail">☕ Référence : <%= product.id %></li>
+                </ul>
+                <img class="article__product-img" src="<%= product.image_url %>" alt="<%= product.name %>">
+              </article>
+            </a>
+          <% }); %>
+        </div>
+        
+      </figure>
+    </div>
+    
+    <h2 class="main__news-title">Nouveautés</h2>
+
+    <div class="main__news">
+
+      
+        <ul class="main__news-list">
+          <% products.forEach(product => { %>
+        <li class="main__news-item">
+          <span class="main__news-title"><%= product.name %></span>
+          <p class="main__news-text">
+            <%= product.description %>
+          </p>
+          <img
+            class="main__news-img"
+            src="<%= product.image_url %>"
+            alt="<%= product.name %>"
+          />
+      
+          <a class="main__news-link" href="/product/ <%= product.id %>">Découvrir</a>
+        </li>
+        
+        <% }) %>
+      </ul>
+      
+         
+ 
+    </div>
+  </main>
+  <%- include('../partials/footer') %>
+  <script src="/js/front.js"></script>
+
+</div>
+</body>
+</html>
+
+
+
+
+
